@@ -23,8 +23,8 @@ public class Main {
 			opcao = ler.nextInt(); 
 			switch(opcao) { 
 				case 1:
+					ler.nextLine();
 					while(qtdePessoas < 10) {
-						ler.nextLine();
 						System.out.print("Nome: ");
 						nome = ler.nextLine();
 						System.out.print("Endereço: ");
@@ -41,7 +41,8 @@ public class Main {
 						cont = Character.toUpperCase(cont); 
 						if(cont == 'S') {
 							qtdePessoas++;
-							clientes.add(new Cliente(nome, ender, dia, mes, ano)); 
+							Cliente c = new Cliente(nome, ender, dia, mes, ano); 
+							clientes.add(c); 
 						}else {
 							break; 
 						}
