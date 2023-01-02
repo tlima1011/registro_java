@@ -65,6 +65,7 @@ public class Cliente {
 	    System.out.print("\n[ 2 ] - Exibir Lista");
 	    System.out.print("\n[ 3 ] - Buscar registro:");
 	    System.out.print("\n[ 4 ] - Eliminar registro");
+	    System.out.print("\n[ 5 ] - Sair");
 	    System.out.print("\n=================================\n");
 	    System.out.print("Informe a opcao: ");
 	}
