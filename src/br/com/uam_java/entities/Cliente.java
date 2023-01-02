@@ -75,7 +75,7 @@ public class Cliente {
 	public static void exibirLista(ArrayList<Cliente> clientes) { 
 		
 		for (Cliente cliente : clientes) {
-			System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d ", cliente.nome, cliente.endereco,cliente.dia, cliente.mes, cliente.ano);// + "Endereço: " +cliente.endereco + ""); 
+			System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d\n", cliente.nome, cliente.endereco,cliente.dia, cliente.mes, cliente.ano);// + "Endereço: " +cliente.endereco + ""); 
 		}
 	}
     

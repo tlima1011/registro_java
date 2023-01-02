@@ -12,8 +12,10 @@ public class Main {
 		Scanner ler = new Scanner(System.in); 
 		
 		ArrayList<Cliente> clientes = new ArrayList<>(); 
+		
 		String nome = "", ender = ""; 
-		Character cont; 
+		Character cont = '\u0000'; 
+		
 		int dia = 0, mes = 0, ano = 0;
 		
 		int opcao = 0, qtdePessoas = 0; 
@@ -39,17 +41,15 @@ public class Main {
 						System.out.print("Deseja continuar: S/N: "); 
 						cont = ler.nextLine().charAt(0); 
 						cont = Character.toUpperCase(cont); 
-						if(cont == 'S') {
-							qtdePessoas++;
-							Cliente c = new Cliente(nome, ender, dia, mes, ano); 
-							clientes.add(c); 
-						}else {
+						qtdePessoas++;
+						clientes.add(new Cliente(nome, ender, dia, mes, ano)); 
+						if(cont == 'N') {
 							break; 
 						}
 					}
+					break; 
 					case 2:
 						Cliente.exibirLista(clientes);
-						
 					break;
 			}
 		}
