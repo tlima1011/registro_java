@@ -47,6 +47,7 @@ public class Main {
 						}
 					}
 					case 2:
+						Cliente.exibirLista(clientes);
 						
 					break;
 			}

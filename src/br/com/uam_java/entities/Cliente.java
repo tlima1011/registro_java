@@ -1,5 +1,7 @@
 package br.com.uam_java.entities;
 
+import java.util.ArrayList;
+
 public class Cliente {
 	
 	private String nome, endereco;
@@ -58,7 +60,7 @@ public class Cliente {
 	}
     
 	public static void  menu(){
-	    System.out.print("=================================\n");
+	    System.out.print("\n=================================\n");
 	    System.out.print("\tCADASTRO DE PESSOAS\n");
 	    System.out.print("=================================\n");
 	    System.out.print("[ 1 ] - Inserir registro: ");
@@ -68,6 +70,13 @@ public class Cliente {
 	    System.out.print("\n[ 5 ] - Sair");
 	    System.out.print("\n=================================\n");
 	    System.out.print("Informe a opcao: ");
+	}
+	
+	public static void exibirLista(ArrayList<Cliente> clientes) { 
+		
+		for (Cliente cliente : clientes) {
+			System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d ", cliente.nome, cliente.endereco,cliente.dia, cliente.mes, cliente.ano);// + "Endereço: " +cliente.endereco + ""); 
+		}
 	}
     
     
