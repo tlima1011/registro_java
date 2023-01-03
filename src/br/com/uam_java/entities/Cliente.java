@@ -78,6 +78,19 @@ public class Cliente {
 			System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d\n", cliente.nome, cliente.endereco,cliente.dia, cliente.mes, cliente.ano);// + "Endereço: " +cliente.endereco + ""); 
 		}
 	}
+
+	public static void buscarRegistro(ArrayList<Cliente> clientes, String procurarNome) {
+		for(int i = 0; i < clientes.size();i++) {
+			if(clientes.get(i).nome.equalsIgnoreCase(procurarNome)) {
+				System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d\n", clientes.get(i).nome, clientes.get(i).endereco, clientes.get(i).dia, clientes.get(i).mes, clientes.get(i).ano);// + "Endereço: " +cliente.endereco + "");
+			}
+		}
+	}
+	
+	public static void eliminarRegistro(ArrayList<Cliente> clientes, String procurarNome) {
+		clientes.remove(procurarNome); 
+		System.out.println("Registro removido");
+	}
     
     
 }
