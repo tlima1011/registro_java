@@ -83,6 +83,9 @@ public class Cliente {
 		for(int i = 0; i < clientes.size();i++) {
 			if(clientes.get(i).nome.equalsIgnoreCase(procurarNome)) {
 				System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d\n", clientes.get(i).nome, clientes.get(i).endereco, clientes.get(i).dia, clientes.get(i).mes, clientes.get(i).ano);// + "Endereço: " +cliente.endereco + "");
+			}else {
+				System.out.println("Cliente não encontrado");
+				break; 
 			}
 		}
 	}
