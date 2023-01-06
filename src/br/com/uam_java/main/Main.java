@@ -53,7 +53,7 @@ public class Main {
 				}
 				break;
 			case 2:
-				Cliente.exibirLista(clientes , qtdePessoas);
+				Cliente.exibirLista(clientes);
 				break;
 			case 3:
 				ler.nextLine();

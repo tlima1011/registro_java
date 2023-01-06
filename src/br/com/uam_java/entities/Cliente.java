@@ -72,7 +72,7 @@ public class Cliente {
 	    System.out.print("Informe a opcao: ");
 	}
 	
-	public static void exibirLista(ArrayList<Cliente> clientes, int qtdePessoas) { 
+	public static void exibirLista(ArrayList<Cliente> clientes) { 
 		if(clientes.isEmpty()) {
 			System.out.println("Lista está vazia");
 		}else {
@@ -105,7 +105,7 @@ public class Cliente {
 					clientes.remove(i); 
 				}
 			}
-		}else {
+		}else{
 			System.out.println("Cliente não encontrado\n");
 		}
 	}
