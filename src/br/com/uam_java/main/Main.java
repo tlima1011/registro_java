@@ -47,24 +47,27 @@ public class Main {
 					if (cont == 'N') {
 						break;
 					}
+					if(qtdePessoas >= 10) {
+						System.out.println("Não permitido mais de 10 pessoas\n");
+					}
 				}
 				break;
 			case 2:
-				Cliente.exibirLista(clientes);
+				Cliente.exibirLista(clientes , qtdePessoas);
 				break;
 			case 3:
 				ler.nextLine();
 				System.out.print("Informe o nome para procurar: ");
 				procurarNome = ler.nextLine();
 				procurarNome = procurarNome.toUpperCase();
-				Cliente.buscarRegistro(clientes, procurarNome);
+				Cliente.buscarRegistro(clientes, procurarNome,qtdePessoas);
 				break;
 			case 4:
 				ler.nextLine();
 				System.out.print("Informe o nome para eliminar: ");
 				procurarNome = ler.nextLine();
 				procurarNome = procurarNome.toUpperCase();
-				Cliente.eliminarRegistro(clientes, procurarNome);
+				Cliente.eliminarRegistro(clientes, procurarNome,qtdePessoas);
 				break;
 			}
 		}

@@ -72,28 +72,41 @@ public class Cliente {
 	    System.out.print("Informe a opcao: ");
 	}
 	
-	public static void exibirLista(ArrayList<Cliente> clientes) { 
-		
-		for (Cliente cliente : clientes) {
-			System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d\n", cliente.nome, cliente.endereco,cliente.dia, cliente.mes, cliente.ano);// + "Endereço: " +cliente.endereco + ""); 
-		}
-	}
-
-	public static void buscarRegistro(ArrayList<Cliente> clientes, String procurarNome) {
-		for(int i = 0; i < clientes.size();i++) {
-			if(clientes.get(i).nome.equalsIgnoreCase(procurarNome)) {
-				System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d\n", clientes.get(i).nome, clientes.get(i).endereco, clientes.get(i).dia, clientes.get(i).mes, clientes.get(i).ano);// + "Endereço: " +cliente.endereco + "");
-			}else {
-				System.out.println("Cliente não encontrado");
-				break; 
+	public static void exibirLista(ArrayList<Cliente> clientes, int qtdePessoas) { 
+		if(clientes.isEmpty()) {
+			System.out.println("Lista está vazia");
+		}else {
+			for (Cliente cliente : clientes) {
+				System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d\n", cliente.nome, cliente.endereco,cliente.dia, cliente.mes, cliente.ano);// + "Endereço: " +cliente.endereco + ""); 
 			}
 		}
 	}
-	
-	public static void eliminarRegistro(ArrayList<Cliente> clientes, String procurarNome) {
-		clientes.remove(procurarNome); 
-		System.out.println("Registro removido");
+
+	public static void buscarRegistro(ArrayList<Cliente> clientes, String procurarNome, int qtdePessoas) { 
+		if(clientes.isEmpty()) {
+			System.out.println("Lista está vazia");
+		}else if (qtdePessoas >= 0 && qtdePessoas < 10) { 
+			for(int i = 0; i < clientes.size();i++) {
+				if(clientes.get(i).nome.equalsIgnoreCase(procurarNome)) {
+					System.out.printf("Nome: %s\tEndereço %s\tData de Nascimento: %d/%d/%d\n", clientes.get(i).nome, clientes.get(i).endereco, clientes.get(i).dia, clientes.get(i).mes, clientes.get(i).ano);// + "Endereço: " +cliente.endereco + "");
+				}
+			}
+		}else {
+			System.out.println("Cliente não encontrado\n");
+		}
 	}
-    
-    
+	
+	public static void eliminarRegistro(ArrayList<Cliente> clientes, String procurarNome, int qtdePessoas) {
+		if(clientes.isEmpty()) { 
+			System.out.println("Lista está vazia");
+		}else if(qtdePessoas >= 0 && qtdePessoas < 10) { 
+			for(int i = 0; i < clientes.size(); i++) { 
+				if(clientes.get(i).nome.equalsIgnoreCase(procurarNome)) {
+					clientes.remove(i); 
+				}
+			}
+		}else {
+			System.out.println("Cliente não encontrado\n");
+		}
+	}
 }
